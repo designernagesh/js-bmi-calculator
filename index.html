@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Body Mass Index Calculator</title>  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Saira+Extra+Condensed:wght@700;800;900&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="height: 90vh" class="d-flex mt-4 justify-content-center align-items-center">
+  <div class="container">
+    <h1 class="display-3 text-danger my-4">Calculate Your Body Mass Index</h1>    
+
+    <label>Your Height</label>
+    <input type="text" placeholder="Feet..." class="form-control" id="feet" />
+    <input type="text" placeholder="Inches..." class="form-control" id="inches" />
+    
+    <label>Your Weight</label>
+    <input type="text" placeholder="Kilograms..." class="form-control" id="kg" />
+
+    <input type="button" class="btn btn-danger" value="Calculat BMI" />
+
+    <div id="result" class="text-danger"></div>
+  <script>
+    let btn = document.querySelector(".btn");
+    let res = document.getElementById('result');
+
+    btn.addEventListener('click', () => {      
+      let feet = document.getElementById('feet');
+      let inches = document.getElementById('inches');
+      let inMetre = (feet.value + inches.value) * 0.025;      
+      let kg = document.getElementById('kg');      
+      
+      let bmi = kg.value / Math.pow(inMetre, 2)
+
+      if( bmi < 18.5){
+        res.innerHTML = 'Your BMI is Underweight';
+      } else if (bmi > 18.5 && bmi < 25 ){
+        res.innerHTML = 'Your BMI is Normal';
+      } else if (bmi > 25 && bmi < 30 ){
+        res.innerHTML = 'Your BMI is Overweight';
+      } else if (bmi > 30 ){
+        res.innerHTML = 'Your BMI shows it\'s  Obesity'
+      } 
+    })
+  </script>
+</body>
+</html>
