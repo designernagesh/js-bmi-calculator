@@ -12,16 +12,31 @@
   <div class="container">
     <h1 class="display-3 text-danger my-4">Calculate Your Body Mass Index</h1>    
 
-    <label>Your Height</label>
-    <input type="text" placeholder="Feet..." class="form-control" id="feet" />
-    <input type="text" placeholder="Inches..." class="form-control" id="inches" />
+      <div class="row">
+        <div class="col-md-12">
+          <label>Your Height</label>
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Feet..." class="form-control mb-1" id="feet" />
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Inches..." class="form-control mb-4" id="inches" />
+        </div>
     
-    <label>Your Weight</label>
-    <input type="text" placeholder="Kilograms..." class="form-control" id="kg" />
+        <div class="col-md-12">
+          <label>Your Weight</label>        
+          <input type="text" placeholder="Kilograms..." class="form-control" id="kg" />
+        </div>
 
-    <input type="button" class="btn btn-danger" value="Calculat BMI" />
-
-    <div id="result" class="text-danger"></div>
+        <div class="col-md-12 text-center my-4">
+          <input type="button" class="btn btn-danger" value="Calculat BMI" />
+        </div>      
+        
+        <div class="col-md-12">
+          <div id="result" class="text-danger text-center"></div>
+        </div>
+      </div>
+   </div>   
   <script>
     let btn = document.querySelector(".btn");
     let res = document.getElementById('result');
